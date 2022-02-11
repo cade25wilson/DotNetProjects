@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ISZfKlGoGB4YUFNlJEFIjgUVnaaGtTSg6iZ8GVDtEh3J9gGEdIcm2/A3mXQJ6K4DfYXOwajn+mZRnG9fQJAuiA==",
+  "dgSpecHash": "K2bIWRaH+4Gl8Gt0jakkRJyF5cL29BMZ4SKcbXzbhFm6Ve+W4Frqs/YUWtszLkI2KcXX1+t/ow/CMnim8CHJvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\New Owner\\OneDrive\\Documents\\aspDotNetProjects\\MvcMovie\\MvcMovie\\MvcMovie.csproj",
   "expectedPackageFiles": [
@@ -127,7 +127,8 @@
     "C:\\Users\\New Owner\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\New Owner\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\New Owner\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\New Owner\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\New Owner\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\New Owner\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }

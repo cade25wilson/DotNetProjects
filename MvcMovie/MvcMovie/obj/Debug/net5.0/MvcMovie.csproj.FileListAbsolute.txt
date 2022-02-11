@@ -18,7 +18,6 @@ C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\De
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\MvcMovie.RazorAssemblyInfo.cache
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\MvcMovie.RazorAssemblyInfo.cs
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\staticwebassets\MvcMovie.StaticWebAssets.Manifest.cache
-C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\staticwebassets\MvcMovie.StaticWebAssets.xml
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\scopedcss\bundle\MvcMovie.styles.css
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\MvcMovie.TagHelpers.input.cache
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\MvcMovie.TagHelpers.output.cache
@@ -151,3 +150,4 @@ C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\De
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\Razor\Views\Movies\Edit.cshtml.g.cs
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
+C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\bin\Debug\net5.0\MvcMovie.StaticWebAssets.xml
