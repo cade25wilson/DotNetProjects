@@ -82,7 +82,7 @@ public class MongoSuggestionData : ISuggestionData
             await suggestionsInTransaction.ReplaceOneAsync(s => s.Id == suggestionId, suggestion);
 
             var usersInTransaction = db.GetCollection<UserModel>(_db.UserCollectionName);
-            var user = await _userData.GetUser(suggestion.Id);
+            var user = await _userData.GetUser(suggestion.Author.Id);
 
             if (isUpvote)
             {
@@ -120,7 +120,7 @@ public class MongoSuggestionData : ISuggestionData
             await suggestionsInTransaction.InsertOneAsync(suggestion);
 
             var usersInTransaction = db.GetCollection<UserModel>(_db.UserCollectionName);
-            var user = await _userData.GetUser(suggestion.Id);
+            var user = await _userData.GetUser(suggestion.Author.Id);
             user.AuthoredSuggestions.Add(item: new BasicSuggestionModel(suggestion));
             await usersInTransaction.ReplaceOneAsync(u => u.Id == user.Id, user);
 
