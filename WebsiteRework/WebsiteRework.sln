@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteRework", "WebsiteRework\WebsiteRework.csproj", "{9A2B9EEB-0DEB-44BC-891F-2DEFFB46D082}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteRework", "WebsiteRework\WebsiteRework.csproj", "{33D48B13-6D06-4EF4-ACBA-F9AB933F6FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9A2B9EEB-0DEB-44BC-891F-2DEFFB46D082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A2B9EEB-0DEB-44BC-891F-2DEFFB46D082}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A2B9EEB-0DEB-44BC-891F-2DEFFB46D082}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A2B9EEB-0DEB-44BC-891F-2DEFFB46D082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D48B13-6D06-4EF4-ACBA-F9AB933F6FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D48B13-6D06-4EF4-ACBA-F9AB933F6FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D48B13-6D06-4EF4-ACBA-F9AB933F6FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D48B13-6D06-4EF4-ACBA-F9AB933F6FB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7F8E7FDD-B2F7-4798-803B-8BEF3D24DA4C}
+		SolutionGuid = {6D5FCEAB-C052-446E-99CB-FA953191FA8A}
 	EndGlobalSection
 EndGlobal

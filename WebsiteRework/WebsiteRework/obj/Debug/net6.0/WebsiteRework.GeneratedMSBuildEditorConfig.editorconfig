@@ -1,14 +1,11 @@
 is_global = true
 build_property.TargetFramework = net6.0
 build_property.TargetPlatformMinVersion = 
-build_property.UsingMicrosoftNETSdkWeb = 
+build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
-build_property.InvariantGlobalization = false
+build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
-build_property._SupportedPlatformList = browser
-build_property.EnableSingleFileAnalyzer = 
-build_property.EnableTrimAnalyzer = true
-build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebsiteRework
 build_property.RootNamespace = WebsiteRework
 build_property.ProjectDir = C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\WebsiteRework\WebsiteRework\
@@ -18,34 +15,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\WebsiteRework\WebsiteRework
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/App.razor]
-build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-pqzgl7vw4w
-
-[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-5yukf1m0m9
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/WebsiteRework/WebsiteRework/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-xb0t6e5pkq
