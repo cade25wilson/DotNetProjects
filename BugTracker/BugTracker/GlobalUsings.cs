@@ -1,6 +1,2 @@
-﻿namespace BugTracker
-{
-    public class GlobalUsings
-    {
-    }
-}
+﻿global using BugTracker.Data;
+global using Microsoft.EntityFrameworkCore;
