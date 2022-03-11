@@ -14,9 +14,7 @@ namespace BugTracker.Models
         }
 
         [Key]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string Id { get; set; } = null!;
+        public int Id { get; set; }
         [StringLength(50)]
         [Unicode(false)]
         public string Name { get; set; } = null!;

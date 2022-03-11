@@ -29,7 +29,7 @@ namespace BugTracker.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BugTrackerDb;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=BugTrackerDb;Trusted_Connection=True;");
             }
         }
 
@@ -37,6 +37,8 @@ namespace BugTracker.Data
         {
             modelBuilder.Entity<Issue>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.HasOne(d => d.IssueClosedByNavigation)
                     .WithMany(p => p.IssueIssueClosedByNavigations)
                     .HasForeignKey(d => d.IssueClosedBy)
@@ -62,13 +64,27 @@ namespace BugTracker.Data
                     .HasConstraintName("FK_Issues_IssuePriority");
             });
 
+            modelBuilder.Entity<IssuePriority>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<IssueStatus>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
             modelBuilder.Entity<Project>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.Property(e => e.Description).IsFixedLength();
             });
 
             modelBuilder.Entity<ProjectAccess>(entity =>
             {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
                 entity.HasOne(d => d.Project)
                     .WithMany(p => p.ProjectAccesses)
                     .HasForeignKey(d => d.ProjectId)
@@ -84,7 +100,9 @@ namespace BugTracker.Data
             modelBuilder.Entity<UserProfile>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-                    .HasName("PK__UserProf__1788CC4CA08612FB");
+                    .HasName("PK__tmp_ms_x__1788CC4C5F4B7976");
+
+                entity.Property(e => e.UserId).ValueGeneratedNever();
             });
 
             OnModelCreatingPartial(modelBuilder);

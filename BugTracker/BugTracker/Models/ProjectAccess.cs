@@ -10,15 +10,9 @@ namespace BugTracker.Models
     public partial class ProjectAccess
     {
         [Key]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string Id { get; set; } = null!;
-        [StringLength(50)]
-        [Unicode(false)]
-        public string ProjectId { get; set; } = null!;
-        [StringLength(50)]
-        [Unicode(false)]
-        public string? User { get; set; }
+        public int Id { get; set; }
+        public int ProjectId { get; set; }
+        public int? User { get; set; }
         [StringLength(50)]
         [Unicode(false)]
         public string? AccessType { get; set; }

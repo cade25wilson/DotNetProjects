@@ -9,9 +9,7 @@ namespace BugTracker.Models
     public partial class Issue
     {
         [Key]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string Id { get; set; } = null!;
+        public int Id { get; set; }
         [Column("Issue_Title")]
         [StringLength(50)]
         [Unicode(false)]
@@ -20,29 +18,19 @@ namespace BugTracker.Models
         [Unicode(false)]
         public string IssueDescription { get; set; } = null!;
         [Column("Issue_Type")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string IssueType { get; set; } = null!;
+        public int IssueType { get; set; }
         [Column("Issue_Priority")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string IssuePriority { get; set; } = null!;
+        public int IssuePriority { get; set; }
         [Column("Issue_CreatedBy")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string IssueCreatedBy { get; set; } = null!;
+        public int IssueCreatedBy { get; set; }
         [Column("Issue_CreatedOn", TypeName = "datetime")]
         public DateTime IssueCreatedOn { get; set; }
         [Column("Issue_ClosedBy")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string IssueClosedBy { get; set; } = null!;
+        public int IssueClosedBy { get; set; }
         [Column("Issue_ClosedOn", TypeName = "datetime")]
         public DateTime IssueClosedOn { get; set; }
         [Column("Issue_ResolutionSummary")]
-        [StringLength(50)]
-        [Unicode(false)]
-        public string IssueResolutionSummary { get; set; } = null!;
+        public int IssueResolutionSummary { get; set; }
 
         [ForeignKey(nameof(IssueClosedBy))]
         [InverseProperty(nameof(UserProfile.IssueIssueClosedByNavigations))]
