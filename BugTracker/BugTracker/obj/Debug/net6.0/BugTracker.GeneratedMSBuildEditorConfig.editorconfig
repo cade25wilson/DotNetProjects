@@ -23,12 +23,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Projects/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Projects/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Projects/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Projects/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Projects/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/UserProfiles/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/UserProfiles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/UserProfiles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/UserProfiles/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/UserProfiles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/New Owner/OneDrive/Documents/aspDotNetProjects/BugTracker/BugTracker/Views/_ViewImports.cshtml]

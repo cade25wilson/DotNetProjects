@@ -22,21 +22,24 @@ namespace BugTracker.Models
         [Column("Issue_Priority")]
         public int IssuePriority { get; set; }
         [Column("Issue_CreatedBy")]
-        public int IssueCreatedBy { get; set; }
+        [StringLength(50)]
+        [Unicode(false)]
+        public string IssueCreatedBy { get; set; } = null!;
         [Column("Issue_CreatedOn", TypeName = "datetime")]
         public DateTime IssueCreatedOn { get; set; }
         [Column("Issue_ClosedBy")]
-        public int IssueClosedBy { get; set; }
+        [StringLength(50)]
+        [Unicode(false)]
+        public string? IssueClosedBy { get; set; }
         [Column("Issue_ClosedOn", TypeName = "datetime")]
-        public DateTime IssueClosedOn { get; set; }
+        public DateTime? IssueClosedOn { get; set; }
         [Column("Issue_ResolutionSummary")]
         public int IssueResolutionSummary { get; set; }
+        [StringLength(50)]
+        [Unicode(false)]
+        public string Project { get; set; } = null!;
 
-        [ForeignKey(nameof(IssueClosedBy))]
-        [InverseProperty(nameof(UserProfile.IssueIssueClosedByNavigations))]
-        public virtual UserProfile IssueClosedByNavigation { get; set; } = null!;
-        [ForeignKey(nameof(IssueCreatedBy))]
-        [InverseProperty(nameof(UserProfile.IssueIssueCreatedByNavigations))]
+        public virtual UserProfile? IssueClosedByNavigation { get; set; }
         public virtual UserProfile IssueCreatedByNavigation { get; set; } = null!;
         [ForeignKey(nameof(IssueResolutionSummary))]
         [InverseProperty(nameof(IssueStatus.Issues))]
@@ -44,5 +47,6 @@ namespace BugTracker.Models
         [ForeignKey(nameof(IssueType))]
         [InverseProperty("Issues")]
         public virtual IssuePriority IssueTypeNavigation { get; set; } = null!;
+        public virtual Project ProjectNavigation { get; set; } = null!;
     }
 }

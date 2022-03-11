@@ -37,16 +37,15 @@ namespace BugTracker.Data
         {
             modelBuilder.Entity<Issue>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.IssueClosedByNavigation)
                     .WithMany(p => p.IssueIssueClosedByNavigations)
+                    .HasPrincipalKey(p => p.DisplayName)
                     .HasForeignKey(d => d.IssueClosedBy)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Issues_UserProfile2");
 
                 entity.HasOne(d => d.IssueCreatedByNavigation)
                     .WithMany(p => p.IssueIssueCreatedByNavigations)
+                    .HasPrincipalKey(p => p.DisplayName)
                     .HasForeignKey(d => d.IssueCreatedBy)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Issues_UserProfile");
@@ -62,29 +61,17 @@ namespace BugTracker.Data
                     .HasForeignKey(d => d.IssueType)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Issues_IssuePriority");
-            });
 
-            modelBuilder.Entity<IssuePriority>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
-
-            modelBuilder.Entity<IssueStatus>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
-
-            modelBuilder.Entity<Project>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.Property(e => e.Description).IsFixedLength();
+                entity.HasOne(d => d.ProjectNavigation)
+                    .WithMany(p => p.Issues)
+                    .HasPrincipalKey(p => p.Name)
+                    .HasForeignKey(d => d.Project)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Issues_Projects");
             });
 
             modelBuilder.Entity<ProjectAccess>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Project)
                     .WithMany(p => p.ProjectAccesses)
                     .HasForeignKey(d => d.ProjectId)
@@ -93,6 +80,7 @@ namespace BugTracker.Data
 
                 entity.HasOne(d => d.UserNavigation)
                     .WithMany(p => p.ProjectAccesses)
+                    .HasPrincipalKey(p => p.DisplayName)
                     .HasForeignKey(d => d.User)
                     .HasConstraintName("FK_ProjectAccess_UserProfile");
             });
@@ -100,9 +88,7 @@ namespace BugTracker.Data
             modelBuilder.Entity<UserProfile>(entity =>
             {
                 entity.HasKey(e => e.UserId)
-                    .HasName("PK__tmp_ms_x__1788CC4C5F4B7976");
-
-                entity.Property(e => e.UserId).ValueGeneratedNever();
+                    .HasName("PK__tmp_ms_x__1788CC4C7C9531A8");
             });
 
             OnModelCreatingPartial(modelBuilder);

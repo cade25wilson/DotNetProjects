@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BugTracker.Models
 {
     [Table("UserProfile")]
+    [Index(nameof(DisplayName), Name = "AK_UserProfile_DisplayName", IsUnique = true)]
     public partial class UserProfile
     {
         public UserProfile()
@@ -31,11 +32,8 @@ namespace BugTracker.Models
         [Unicode(false)]
         public string AllowEmailNotification { get; set; } = null!;
 
-        [InverseProperty(nameof(Issue.IssueClosedByNavigation))]
         public virtual ICollection<Issue> IssueIssueClosedByNavigations { get; set; }
-        [InverseProperty(nameof(Issue.IssueCreatedByNavigation))]
         public virtual ICollection<Issue> IssueIssueCreatedByNavigations { get; set; }
-        [InverseProperty(nameof(ProjectAccess.UserNavigation))]
         public virtual ICollection<ProjectAccess> ProjectAccesses { get; set; }
     }
 }

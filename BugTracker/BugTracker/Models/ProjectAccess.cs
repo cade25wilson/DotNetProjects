@@ -12,7 +12,9 @@ namespace BugTracker.Models
         [Key]
         public int Id { get; set; }
         public int ProjectId { get; set; }
-        public int? User { get; set; }
+        [StringLength(50)]
+        [Unicode(false)]
+        public string? User { get; set; }
         [StringLength(50)]
         [Unicode(false)]
         public string? AccessType { get; set; }
@@ -20,8 +22,6 @@ namespace BugTracker.Models
         [ForeignKey(nameof(ProjectId))]
         [InverseProperty("ProjectAccesses")]
         public virtual Project Project { get; set; } = null!;
-        [ForeignKey(nameof(User))]
-        [InverseProperty(nameof(UserProfile.ProjectAccesses))]
         public virtual UserProfile? UserNavigation { get; set; }
     }
 }

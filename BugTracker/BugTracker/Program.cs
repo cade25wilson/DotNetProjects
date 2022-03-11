@@ -3,6 +3,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddDbContext<BugTrackerDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BugTrackerDbContext"));
+});
 
 var app = builder.Build();
 
