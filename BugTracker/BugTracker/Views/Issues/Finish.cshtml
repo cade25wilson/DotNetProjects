@@ -1,0 +1,89 @@
+﻿@model IEnumerable<BugTracker.Models.Issue>
+
+@{
+    ViewData["Title"] = "Finish";
+}
+
+<h1>Finish</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueCreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueClosedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueResolutionSummary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueClosedByNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueCreatedByNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuePriorityNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssueTypeNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueCreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueClosedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueResolutionSummary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueClosedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueCreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuePriority)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssueType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -30,16 +30,16 @@ namespace BugTracker.Models
         [Unicode(false)]
         public string IssueCreatedBy { get; set; } = null!;
         [Column("Issue_CreatedOn", TypeName = "datetime")]
-        public DateTime IssueCreatedOn { get; set; }
+        public DateTime IssueCreatedOn { get; set; } = DateTime.Now;
         [Column("Issue_ClosedBy")]
         [StringLength(50)]
         [Unicode(false)]
-        public string IssueClosedBy { get; set; } = null!;
+        public string? IssueClosedBy { get; set; } = null!;
         [Column("Issue_ClosedOn", TypeName = "datetime")]
-        public DateTime IssueClosedOn { get; set; }
+        public DateTime? IssueClosedOn { get; set; }
         [Column("Issue_ResolutionSummary")]
         [Unicode(false)]
-        public string IssueResolutionSummary { get; set; } = null!;
+        public string? IssueResolutionSummary { get; set; }
         [StringLength(50)]
         [Unicode(false)]
         public string Project { get; set; } = null!;
