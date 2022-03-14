@@ -41,6 +41,7 @@ namespace BugTracker.Data
                     .WithMany(p => p.IssueIssueClosedByNavigations)
                     .HasPrincipalKey(p => p.DisplayName)
                     .HasForeignKey(d => d.IssueClosedBy)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Issues_UserProfile2");
 
                 entity.HasOne(d => d.IssueCreatedByNavigation)
@@ -50,17 +51,19 @@ namespace BugTracker.Data
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Issues_UserProfile");
 
-                entity.HasOne(d => d.IssueResolutionSummaryNavigation)
+                entity.HasOne(d => d.IssuePriorityNavigation)
                     .WithMany(p => p.Issues)
-                    .HasForeignKey(d => d.IssueResolutionSummary)
+                    .HasPrincipalKey(p => p.IssuePriorityType)
+                    .HasForeignKey(d => d.IssuePriority)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Issues_IssueStatus");
+                    .HasConstraintName("FK_Issues_IssuePriority");
 
                 entity.HasOne(d => d.IssueTypeNavigation)
                     .WithMany(p => p.Issues)
+                    .HasPrincipalKey(p => p.IssueStatusType)
                     .HasForeignKey(d => d.IssueType)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Issues_IssuePriority");
+                    .HasConstraintName("FK_Issues_IssueStatus");
 
                 entity.HasOne(d => d.ProjectNavigation)
                     .WithMany(p => p.Issues)

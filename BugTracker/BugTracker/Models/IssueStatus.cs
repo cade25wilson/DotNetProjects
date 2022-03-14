@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BugTracker.Models
 {
     [Table("IssueStatus")]
+    [Index(nameof(IssueStatusType), Name = "AK_IssueStatus_Issue_Status_Type", IsUnique = true)]
     public partial class IssueStatus
     {
         public IssueStatus()
@@ -21,7 +22,6 @@ namespace BugTracker.Models
         [Unicode(false)]
         public string IssueStatusType { get; set; } = null!;
 
-        [InverseProperty(nameof(Issue.IssueResolutionSummaryNavigation))]
         public virtual ICollection<Issue> Issues { get; set; }
     }
 }

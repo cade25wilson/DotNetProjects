@@ -11,22 +11,22 @@ using BugTracker.Models;
 
 namespace BugTracker.Controllers
 {
-    public class ProjectsController : Controller
+    public class IssuePrioritiesController : Controller
     {
         private readonly BugTrackerDbContext _context;
 
-        public ProjectsController(BugTrackerDbContext context)
+        public IssuePrioritiesController(BugTrackerDbContext context)
         {
             _context = context;
         }
 
-        // GET: Projects
+        // GET: IssuePriorities
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Projects.ToListAsync());
+            return View(await _context.IssuePriorities.ToListAsync());
         }
 
-        // GET: Projects/Details/5
+        // GET: IssuePriorities/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,40 +34,39 @@ namespace BugTracker.Controllers
                 return NotFound();
             }
 
-            var project = await _context.Projects
+            var issuePriority = await _context.IssuePriorities
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (project == null)
+            if (issuePriority == null)
             {
                 return NotFound();
             }
 
-            return View(project);
+            return View(issuePriority);
         }
 
-        // GET: Projects/Create
+        // GET: IssuePriorities/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Projects/Create
+        // POST: IssuePriorities/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,ModifiedOn")] Project project)
+        public async Task<IActionResult> Create([Bind("Id,IssuePriorityType")] IssuePriority issuePriority)
         {
-            project.ModifiedOn = DateTime.Now;   
             if (ModelState.IsValid)
             {
-                _context.Add(project);
+                _context.Add(issuePriority);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(project);
+            return View(issuePriority);
         }
 
-        // GET: Projects/Edit/5
+        // GET: IssuePriorities/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +74,22 @@ namespace BugTracker.Controllers
                 return NotFound();
             }
 
-            var project = await _context.Projects.FindAsync(id);
-            if (project == null)
+            var issuePriority = await _context.IssuePriorities.FindAsync(id);
+            if (issuePriority == null)
             {
                 return NotFound();
             }
-            return View(project);
+            return View(issuePriority);
         }
 
-        // POST: Projects/Edit/5
+        // POST: IssuePriorities/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,ModifiedOn")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IssuePriorityType")] IssuePriority issuePriority)
         {
-            if (id != project.Id)
+            if (id != issuePriority.Id)
             {
                 return NotFound();
             }
@@ -99,12 +98,12 @@ namespace BugTracker.Controllers
             {
                 try
                 {
-                    _context.Update(project);
+                    _context.Update(issuePriority);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProjectExists(project.Id))
+                    if (!IssuePriorityExists(issuePriority.Id))
                     {
                         return NotFound();
                     }
@@ -115,10 +114,10 @@ namespace BugTracker.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(project);
+            return View(issuePriority);
         }
 
-        // GET: Projects/Delete/5
+        // GET: IssuePriorities/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +125,30 @@ namespace BugTracker.Controllers
                 return NotFound();
             }
 
-            var project = await _context.Projects
+            var issuePriority = await _context.IssuePriorities
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (project == null)
+            if (issuePriority == null)
             {
                 return NotFound();
             }
 
-            return View(project);
+            return View(issuePriority);
         }
 
-        // POST: Projects/Delete/5
+        // POST: IssuePriorities/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var project = await _context.Projects.FindAsync(id);
-            _context.Projects.Remove(project);
+            var issuePriority = await _context.IssuePriorities.FindAsync(id);
+            _context.IssuePriorities.Remove(issuePriority);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProjectExists(int id)
+        private bool IssuePriorityExists(int id)
         {
-            return _context.Projects.Any(e => e.Id == id);
+            return _context.IssuePriorities.Any(e => e.Id == id);
         }
     }
 }

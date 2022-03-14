@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BugTracker.Models
 {
     [Table("IssuePriority")]
+    [Index(nameof(IssuePriorityType), Name = "AK_IssuePriority_Issue_Priority_Type", IsUnique = true)]
     public partial class IssuePriority
     {
         public IssuePriority()
@@ -19,9 +20,8 @@ namespace BugTracker.Models
         [Column("Issue_Priority_Type")]
         [StringLength(50)]
         [Unicode(false)]
-        public string? IssuePriorityType { get; set; }
+        public string IssuePriorityType { get; set; } = null!;
 
-        [InverseProperty(nameof(Issue.IssueTypeNavigation))]
         public virtual ICollection<Issue> Issues { get; set; }
     }
 }

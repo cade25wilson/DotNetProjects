@@ -18,9 +18,13 @@ namespace BugTracker.Models
         [Unicode(false)]
         public string IssueDescription { get; set; } = null!;
         [Column("Issue_Type")]
-        public int IssueType { get; set; }
+        [StringLength(50)]
+        [Unicode(false)]
+        public string IssueType { get; set; } = null!;
         [Column("Issue_Priority")]
-        public int IssuePriority { get; set; }
+        [StringLength(50)]
+        [Unicode(false)]
+        public string IssuePriority { get; set; } = null!;
         [Column("Issue_CreatedBy")]
         [StringLength(50)]
         [Unicode(false)]
@@ -30,23 +34,20 @@ namespace BugTracker.Models
         [Column("Issue_ClosedBy")]
         [StringLength(50)]
         [Unicode(false)]
-        public string? IssueClosedBy { get; set; }
+        public string IssueClosedBy { get; set; } = null!;
         [Column("Issue_ClosedOn", TypeName = "datetime")]
-        public DateTime? IssueClosedOn { get; set; }
+        public DateTime IssueClosedOn { get; set; }
         [Column("Issue_ResolutionSummary")]
-        public int IssueResolutionSummary { get; set; }
+        [Unicode(false)]
+        public string IssueResolutionSummary { get; set; } = null!;
         [StringLength(50)]
         [Unicode(false)]
         public string Project { get; set; } = null!;
 
-        public virtual UserProfile? IssueClosedByNavigation { get; set; }
-        public virtual UserProfile IssueCreatedByNavigation { get; set; } = null!;
-        [ForeignKey(nameof(IssueResolutionSummary))]
-        [InverseProperty(nameof(IssueStatus.Issues))]
-        public virtual IssueStatus IssueResolutionSummaryNavigation { get; set; } = null!;
-        [ForeignKey(nameof(IssueType))]
-        [InverseProperty("Issues")]
-        public virtual IssuePriority IssueTypeNavigation { get; set; } = null!;
-        public virtual Project ProjectNavigation { get; set; } = null!;
+        public virtual UserProfile? IssueClosedByNavigation { get; set; } 
+        public virtual UserProfile? IssueCreatedByNavigation { get; set; } 
+        public virtual IssuePriority? IssuePriorityNavigation { get; set; } 
+        public virtual IssueStatus? IssueTypeNavigation { get; set; } 
+        public virtual Project? ProjectNavigation { get; set; } 
     }
 }
