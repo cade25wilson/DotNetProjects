@@ -38,6 +38,17 @@ namespace BugTracker.Controllers
             return View(await isInProgress.ToListAsync());
         }
 
+        public async Task<IActionResult> Abandon()
+        {
+            var isInProgress = _context.Issues.Where(i => i.IssueType == "Abandoned");
+            return View(await isInProgress.ToListAsync());
+        }
+
+        public async Task<IActionResult> UnderReview()
+        {
+            var isInProgress = _context.Issues.Where(i => i. == "Completed");
+            return View(await isInProgress.ToListAsync());
+        }
 
         // GET: Issues/Details/5
         public async Task<IActionResult> Details(int? id)

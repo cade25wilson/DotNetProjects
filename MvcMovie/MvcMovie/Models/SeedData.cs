@@ -4,8 +4,6 @@ using MvcMovie.Data;
 using System;
 using System.Linq;
 
-
-
 namespace MvcMovie.Models
 {
     public static class SeedData
