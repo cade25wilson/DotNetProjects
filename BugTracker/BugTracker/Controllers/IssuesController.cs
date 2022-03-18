@@ -1,12 +1,8 @@
 ﻿#nullable disable
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using BugTracker.Data;
 using BugTracker.Models;
 
 namespace BugTracker.Controllers
@@ -23,6 +19,10 @@ namespace BugTracker.Controllers
         // GET: Issues
         public async Task<IActionResult> Index(string projectIssue, string searchString, string issueType, string issueStatus, string issueCreator, string issueCloser)
         {
+            IQueryable<string> searchQuery = from i in _context.Issues
+                                             orderby i.IssueTitle
+                                             select i.IssueTitle;
+
             IQueryable<string> projectQuery = from i in _context.Issues
                                             orderby i.Project
                                             select i.Project;

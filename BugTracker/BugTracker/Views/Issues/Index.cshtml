@@ -18,6 +18,7 @@
 
 <form asp-controller="Issues" asp-action="Index" method="get">
     <p>
+        Title: <input type="text" asp-for="SearchString" />
         <select asp-for="ProjectIssue" asp-items="Model.Projects">
             <option value="">Project</option>
         </select>
