@@ -27,8 +27,8 @@ namespace BugTracker.Controllers
                                             orderby i.Project
                                             select i.Project;
 
-            var issues = from i in _context.Issues
-                           select i;
+            var issues = from i in _context.Issues.Include(i => i.IssueClosedByNavigation).Include(i => i.IssueCreatedByNavigation).Include(i => i.IssuePriorityNavigation).Include(i => i.IssueTypeNavigation).Include(i => i.ProjectNavigation)
+                         select i;
 
             if (!String.IsNullOrEmpty(searchString))
             {
