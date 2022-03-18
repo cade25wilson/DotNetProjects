@@ -16,8 +16,7 @@ namespace BugTracker.Controllers
             _context = context;
         }
 
-        // GET: Issues
-        public async Task<IActionResult> Index(string projectIssue, string searchString, string issueType, string issueStatus, string issueCreator, string issueCloser)
+        public async Task<IActionResult> Dashboard()
         {
             var findActive = from i in _context.Issues
                              where i.IssueType == "active"
@@ -27,9 +26,38 @@ namespace BugTracker.Controllers
                              where i.IssueType == "Completed"
                              select i;
 
+            var findAbandonded = from i in _context.Issues
+                                 where i.IssueType == "Abandoned"
+                                 select i;
+
+            var totalTickets = from i in _context.Issues
+                               orderby i.IssueType
+                               select i.IssueType;
+
+            var totalLowP = from i in _context.Issues
+                            where i.IssuePriority == "Low Priority"
+                            select i.IssuePriority;
+
             int openIssues = findActive.Count();
             int closedIssues = findClosed.Count();
+            int totalIssues = totalTickets.Count();
+            int abandondedIssues = findAbandonded.Count();
+            int lowPriorities = totalLowP.Count();
 
+            var dashboardVM = new DashBoardViewModel
+            {
+                OpenIssues = openIssues,
+                ClosedIssues = closedIssues,
+                TotalIssues = totalIssues,
+                AbandonedIssues = abandondedIssues,
+                LowPriority = lowPriorities
+            };
+            return View(dashboardVM);
+        }
+
+        // GET: Issues
+        public async Task<IActionResult> Index(string projectIssue, string searchString, string issueType, string issueStatus, string issueCreator, string issueCloser)
+        {
             IQueryable<string> searchQuery = from i in _context.Issues
                                              orderby i.IssueTitle
                                              select i.IssueTitle;
@@ -95,8 +123,6 @@ namespace BugTracker.Controllers
                 IssueCreators = new SelectList(await creatorQuery.Distinct().ToListAsync()),
                 IssueClosers = new SelectList(await closerQuery.Distinct().ToListAsync()),
                 Issues = await issues.ToListAsync(),
-                OpenIssues = openIssues,
-                ClosedIssues = closedIssues
             };
             return View(issueVM);
         }

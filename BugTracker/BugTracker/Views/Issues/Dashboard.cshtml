@@ -1,0 +1,14 @@
+﻿@model BugTracker.Models.DashBoardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>
+Open Issues: @Html.DisplayFor(model => model.OpenIssues) <br />
+Closed Issues: @Html.DisplayFor(model => model.ClosedIssues) <br />
+Abandonded Issues: @Html.DisplayFor(model => model.AbandonedIssues) <br />
+Total Issues:  @Html.DisplayFor(model => model.TotalIssues) <br />
+Low Priorities:  @Html.DisplayFor(model => model.LowPriority) <br />
+
+</h1>
