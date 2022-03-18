@@ -19,10 +19,20 @@
 <form asp-controller="Issues" asp-action="Index" method="get">
     <p>
         <select asp-for="ProjectIssue" asp-items="Model.Projects">
-            <option value="">All</option>
+            <option value="">Project</option>
         </select>
-
-        Title: <input type="text" asp-for="SearchString" />
+        <select asp-for="IssueType" asp-items="Model.IssueTypes">
+            <option value="">Status</option>
+        </select>
+        <select asp-for="IssueStatus" asp-items="Model.IssueStatuses">
+            <option value="">Priority</option>
+        </select>
+        <select asp-for="IssueCreator" asp-items="Model.IssueCreators">
+            <option value="">Creator</option>
+        </select>
+        <select asp-for="IssueCloser" asp-items="Model.IssueClosers">
+            <option value="">Closer</option>
+        </select>
         <input type="submit" value="Filter" />
     </p>
 </form>

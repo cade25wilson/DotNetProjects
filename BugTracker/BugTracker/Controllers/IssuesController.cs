@@ -21,11 +21,27 @@ namespace BugTracker.Controllers
         }
 
         // GET: Issues
-        public async Task<IActionResult> Index(string projectIssue, string searchString)
+        public async Task<IActionResult> Index(string projectIssue, string searchString, string issueType, string issueStatus, string issueCreator, string issueCloser)
         {
-            IQueryable<string> issueQuery = from i in _context.Issues
+            IQueryable<string> projectQuery = from i in _context.Issues
                                             orderby i.Project
                                             select i.Project;
+
+            IQueryable<string> typeQuery = from i in _context.Issues
+                                           orderby i.IssueType
+                                           select i.IssueType;
+
+            IQueryable<string> statusQuery = from i in _context.Issues
+                                           orderby i.IssuePriority
+                                           select i.IssuePriority;
+
+            IQueryable<string> creatorQuery = from i in _context.Issues
+                                             orderby i.IssueCreatedBy
+                                             select i.IssueCreatedBy;
+
+            IQueryable<string> closerQuery = from i in _context.Issues
+                                              orderby i.IssueClosedBy
+                                              select i.IssueClosedBy;
 
             var issues = from i in _context.Issues.Include(i => i.IssueClosedByNavigation).Include(i => i.IssueCreatedByNavigation).Include(i => i.IssuePriorityNavigation).Include(i => i.IssueTypeNavigation).Include(i => i.ProjectNavigation)
                          select i;
@@ -40,9 +56,33 @@ namespace BugTracker.Controllers
                 issues = issues.Where(s => s.Project.Contains(projectIssue));
             }
 
+            if (!string.IsNullOrEmpty(issueType))
+            {
+                issues = issues.Where(s => s.IssueType.Contains(issueType));
+            }
+
+            if (!string.IsNullOrEmpty(issueStatus))
+            {
+                issues = issues.Where(s => s.IssuePriority.Contains(issueStatus));
+            }
+
+            if (!string.IsNullOrEmpty(issueCreator))
+            {
+                issues = issues.Where(s => s.IssueCreatedBy.Contains(issueCreator));
+            }
+
+            if (!string.IsNullOrEmpty(issueCloser))
+            {
+                issues = issues.Where(s => s.IssueClosedBy.Contains(issueCloser));
+            }
+
             var issueVM = new IssuesViewModel
             {
-                Projects = new SelectList(await issueQuery.Distinct().ToListAsync()),
+                Projects = new SelectList(await projectQuery.Distinct().ToListAsync()),
+                IssueTypes = new SelectList(await typeQuery.Distinct().ToListAsync()),
+                IssueStatuses = new SelectList(await statusQuery.Distinct().ToListAsync()),
+                IssueCreators = new SelectList(await creatorQuery.Distinct().ToListAsync()),
+                IssueClosers = new SelectList(await closerQuery.Distinct().ToListAsync()),
                 Issues = await issues.ToListAsync()
             };
             return View(issueVM);
