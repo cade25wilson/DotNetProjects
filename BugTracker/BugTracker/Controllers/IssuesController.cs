@@ -46,7 +46,7 @@ namespace BugTracker.Controllers
 
         public async Task<IActionResult> UnderReview()
         {
-            var isInProgress = _context.Issues.Where(i => i. == "Completed");
+            var isInProgress = _context.Issues.Where(i => i.IssueType == "Completed");
             return View(await isInProgress.ToListAsync());
         }
 

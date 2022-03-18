@@ -21,27 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.IssueCreatedOn)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssueClosedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssueResolutionSummary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssueClosedByNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssueCreatedByNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssuePriorityNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IssueTypeNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProjectNavigation)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -58,30 +38,7 @@
                 @Html.DisplayFor(modelItem => item.IssueCreatedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IssueClosedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssueResolutionSummary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssueClosedByNavigation.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssueCreatedByNavigation.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssuePriorityNavigation.IssuePriorityType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IssueTypeNavigation.IssueStatusType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProjectNavigation.Name)
-            </td>
-            <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }
