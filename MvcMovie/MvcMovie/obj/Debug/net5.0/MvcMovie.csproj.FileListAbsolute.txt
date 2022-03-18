@@ -150,4 +150,3 @@ C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\De
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\Razor\Views\Movies\Details.cshtml.g.cs
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\Razor\Views\Movies\Edit.cshtml.g.cs
 C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\obj\Debug\net5.0\Razor\Views\Movies\Index.cshtml.g.cs
-C:\Users\New Owner\OneDrive\Documents\aspDotNetProjects\MvcMovie\MvcMovie\bin\Debug\net5.0\MvcMovie.StaticWebAssets.xml

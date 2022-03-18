@@ -21,10 +21,37 @@ namespace BugTracker.Controllers
         }
 
         // GET: Issues
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string projectIssue, string searchString)
         {
-            var bugTrackerDbContext = _context.Issues.Include(i => i.IssueClosedByNavigation).Include(i => i.IssueCreatedByNavigation).Include(i => i.IssuePriorityNavigation).Include(i => i.IssueTypeNavigation).Include(i => i.ProjectNavigation);
-            return View(await bugTrackerDbContext.ToListAsync());
+            IQueryable<string> issueQuery = from i in _context.Issues
+                                            orderby i.Project
+                                            select i.Project;
+
+            var issues = from i in _context.Issues
+                           select i;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                issues = issues.Where(s => s.IssueTitle.Contains(searchString));
+            }
+
+            if (!String.IsNullOrEmpty(projectIssue))
+            {
+                issues = issues.Where(s => s.Project.Contains(projectIssue));
+            }
+
+            var issueVM = new IssuesViewModel
+            {
+                Projects = new SelectList(await issueQuery.Distinct().ToListAsync()),
+                Issues = await issues.ToListAsync()
+            };
+            return View(issueVM);
+        }
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
         }
 
         public async Task<IActionResult> Active()

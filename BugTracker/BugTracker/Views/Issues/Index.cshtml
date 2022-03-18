@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BugTracker.Models.Issue>
+﻿@model BugTracker.Models.IssuesViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -15,44 +15,56 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="Issues" asp-action="Index" method="get">
+    <p>
+        <select asp-for="ProjectIssue" asp-items="Model.Projects">
+            <option value="">All</option>
+        </select>
+
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.IssueTitle)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueTitle)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueDescription)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueDescription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueCreatedOn)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueCreatedOn)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueClosedOn)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueClosedOn)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueResolutionSummary)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueResolutionSummary)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueClosedByNavigation)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueClosedByNavigation)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueCreatedByNavigation)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueCreatedByNavigation)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssuePriorityNavigation)
+                @Html.DisplayNameFor(model => model.Issues[0].IssuePriorityNavigation)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IssueTypeNavigation)
+                @Html.DisplayNameFor(model => model.Issues[0].IssueTypeNavigation)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProjectNavigation)
+                @Html.DisplayNameFor(model => model.Issues[0].ProjectNavigation)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Issues) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.IssueTitle)
