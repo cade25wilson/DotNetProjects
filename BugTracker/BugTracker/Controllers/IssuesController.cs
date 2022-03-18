@@ -19,6 +19,17 @@ namespace BugTracker.Controllers
         // GET: Issues
         public async Task<IActionResult> Index(string projectIssue, string searchString, string issueType, string issueStatus, string issueCreator, string issueCloser)
         {
+            var findActive = from i in _context.Issues
+                             where i.IssueType == "active"
+                             select i;
+
+            var findClosed = from i in _context.Issues
+                             where i.IssueType == "Completed"
+                             select i;
+
+            int openIssues = findActive.Count();
+            int closedIssues = findClosed.Count();
+
             IQueryable<string> searchQuery = from i in _context.Issues
                                              orderby i.IssueTitle
                                              select i.IssueTitle;
@@ -83,7 +94,9 @@ namespace BugTracker.Controllers
                 IssueStatuses = new SelectList(await statusQuery.Distinct().ToListAsync()),
                 IssueCreators = new SelectList(await creatorQuery.Distinct().ToListAsync()),
                 IssueClosers = new SelectList(await closerQuery.Distinct().ToListAsync()),
-                Issues = await issues.ToListAsync()
+                Issues = await issues.ToListAsync(),
+                OpenIssues = openIssues,
+                ClosedIssues = closedIssues
             };
             return View(issueVM);
         }
@@ -200,7 +213,6 @@ namespace BugTracker.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Complete(int id, [Bind("Id,IssueTitle,IssueDescription,IssueType,IssuePriority,IssueCreatedBy,IssueCreatedOn,IssueClosedBy,IssueClosedOn,IssueResolutionSummary,Project")] Issue issue)
         {
-            issue.IssueType = "Completed";
             issue.IssueClosedOn = DateTime.Now; 
             if (id != issue.Id)
             {
