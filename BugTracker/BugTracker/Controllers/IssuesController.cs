@@ -30,6 +30,10 @@ namespace BugTracker.Controllers
                                  where i.IssueType == "Abandoned"
                                  select i;
 
+            var findNotStarted = from i in _context.Issues
+                               where i.IssueType == "Not Started"
+                               select i;
+
             var totalTickets = from i in _context.Issues
                                orderby i.IssueType
                                select i.IssueType;
@@ -37,12 +41,33 @@ namespace BugTracker.Controllers
             var totalLowP = from i in _context.Issues
                             where i.IssuePriority == "Low Priority"
                             select i.IssuePriority;
+            var totalMedP = from i in _context.Issues
+                            where i.IssuePriority == "Medium Priority"
+                            select i.IssuePriority;
+
+            var totalHighP = from i in _context.Issues
+                            where i.IssuePriority == "High Priority"
+                            select i.IssuePriority;
+
+            var totalUrgentP = from i in _context.Issues
+                            where i.IssuePriority == "Urgent Priority"
+                            select i.IssuePriority;
+
+            var totalEmergencyP = from i in _context.Issues
+                            where i.IssuePriority == "Emergency Priority"
+                            select i.IssuePriority;
 
             int openIssues = findActive.Count();
             int closedIssues = findClosed.Count();
             int totalIssues = totalTickets.Count();
             int abandondedIssues = findAbandonded.Count();
             int lowPriorities = totalLowP.Count();
+            int medPriorities = totalLowP.Count();
+            int highPriorities = totalLowP.Count();
+            int urgentPriorities = totalLowP.Count();
+            int emergencyPriorities = totalLowP.Count();
+            int notStarted = findNotStarted.Count();
+
 
             var dashboardVM = new DashBoardViewModel
             {
@@ -50,7 +75,12 @@ namespace BugTracker.Controllers
                 ClosedIssues = closedIssues,
                 TotalIssues = totalIssues,
                 AbandonedIssues = abandondedIssues,
-                LowPriority = lowPriorities
+                NotStarted = notStarted,
+                LowPriority = lowPriorities,
+                MediumPriority = medPriorities,
+                HighPriority = highPriorities,
+                UrgentPriority = urgentPriorities,
+                EmergencyPriority = emergencyPriorities
             };
             return View(dashboardVM);
         }

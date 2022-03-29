@@ -17,5 +17,7 @@ namespace BugTracker.Models
         public string IssueCreator { get; set; }
         public string IssueCloser { get; set; }
         public string SearchString { get; set; }
+
+
     }
 }
